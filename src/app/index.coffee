@@ -1,7 +1,5 @@
 app = require('derby').createApp(module)
-  #.use(require 'derby-ui-boot')
   .use(require '../../ui/index.coffee')
-
 
 app.get "/notes/:id", (page, model, params, next) ->
   return page.render("new")  if params.id is "new"
@@ -13,7 +11,7 @@ app.get "/notes/:id", (page, model, params, next) ->
     page.render "note"
 
 app.get "/", (page, model) ->
-  note = model.add 'notes', {name: "Write a note"}
-  #note = model.at("notes." + ()
+  note = model.add 'notes', {name: "Write a note"}, 
   console.log note
+  # note — this redirect is sometimes working, sometimes not; is the record not fully written by the time the redirect occurs?
   page.redirect "/notes/" + note
