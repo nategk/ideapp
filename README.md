@@ -1,6 +1,6 @@
 # goodnotes
 
-Ultralight-touch collaborateive notes app — visit the site and start collaborating on a URL.
+Ultralight-touch collaborateive notes app — visit [notes.culturegraphic.com](http://notes.culturegraphic.com/) and start collaborating on a URL.
 
 
 ## Development setup for OSX
