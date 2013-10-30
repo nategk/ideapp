@@ -1,5 +1,7 @@
 # goodnotes
 
+Ultralight-touch collaborateive notes app — visit the site and start collaborating on a URL.
+
 
 ## Setup for OSX
 
