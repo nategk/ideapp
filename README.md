@@ -2,16 +2,16 @@
 
 ## Setup Mac
 
--Install OSX Developer Tools from App Store
+- Install OSX Developer Tools from App Store
 
--Install [Homebrew, Node, and NPM](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
+- Install [Homebrew, Node, and NPM](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
 
--Install [Derby](http://derbyjs.com/#getting_started)
+- Install [Derby](http://derbyjs.com/#getting_started)
 
     npm install -g derby
     
--Clone this repo
+- Clone this repo
 
--Run app from directory
+- Run app from directory
 
     npm start
