@@ -3,7 +3,7 @@
 Ultralight-touch collaborateive notes app — visit the site and start collaborating on a URL.
 
 
-## Setup for OSX
+## Development setup for OSX
 
 - Install OSX Developer Tools from App Store
 
