@@ -5,13 +5,17 @@
 
 - Install OSX Developer Tools from App Store
 
-- Install [Homebrew, Node, and NPM](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
+- Open Terminal.app and follow this [guide to install Homebrew, Node, and NPM](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
 
-- Install [Derby](http://derbyjs.com/#getting_started)
+- Still in Terminal, install [Derby](http://derbyjs.com/#getting_started):
 
         npm install -g derby
 
-- Clone this repo
+- Clone this repo ("cd" to any directory to taste)
+
+        cd ~/Repos/
+        git clone https://github.com/culturegraphic/goodnotes.git
+        cd goodnotes
 
 - Run app from directory
 
