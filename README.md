@@ -13,7 +13,7 @@
 
 - Clone this repo ("cd" to any directory to taste)
 
-        cd ~/Repos/
+        cd ~/
         git clone https://github.com/culturegraphic/goodnotes.git
         cd goodnotes
 
