@@ -1,7 +1,7 @@
 # goodnotes
 
 
-## Setup Mac
+## Setup OSX
 
 - Install OSX Developer Tools from App Store
 
