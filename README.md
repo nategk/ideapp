@@ -7,7 +7,7 @@
 
 - Open Terminal.app and follow this [guide to install Homebrew, Node, and NPM](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
 
-- Still in Terminal, install [Derby](http://derbyjs.com/#getting_started):
+- Still in Terminal, install [Derby js](http://derbyjs.com/#getting_started):
 
         npm install -g derby
 
