@@ -1,34 +1,32 @@
 <Body:>
 
   <article>
-    <section class="new-note">
-      <h3>Add note</h3>
-      <label>Title</label>
-      <h1 contenteditable="true">{_page.newNote.title}</h1>
-      <label>Note</label>
-      <section contenteditable="true">{unescaped _page.newNote.description}</section>
-      <button type="submit" x-bind="click: list.add">Add</button>
-    </section>
 
-    <section class="notes">
-      <table>
-        <thead>
+    <h3>Add note</h3>
+    <label>Title</label>
+    <h1 contenteditable="true">{_page.newNote.title}</h1>
+    <label>Note</label>
+    <section contenteditable="true">{unescaped _page.newNote.description}</section>
+    <button type="submit" x-bind="click: list.add">Add</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {#each _page.notes as :note}
           <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Description</th>
+            <td><a href="/note/{{:note.id}}">{{:note.id}}</td>
+            <td>{{:note.title}}</td>
+            <td>{{:note.description}}</td>
+            <td><button x-bind="click: list.remove">Remove</button></td>
           </tr>
-        </thead>
-        <tbody>
-          {#each _page.notes as :note}
-            <tr>
-              <td><a href="/note/{{:note.id}}">{{:note.id}}</td>
-              <td>{{:note.title}}</td>
-              <td>{{:note.description}}</td>
-              <td><button x-bind="click: list.remove">Remove</button></td>
-            </tr>
-          {/}
-        </tbody>
-      </table>
-    </section>
+        {/}
+      </tbody>
+    </table>
+
   </article>
