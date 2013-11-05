@@ -1,5 +1,5 @@
-<import: src="./home">
 <import: src="./list">
+<import: src="./note">
 
 <!--
   Derby templates are similar to Handlebars, except that they are first
@@ -20,30 +20,16 @@
 <Header:>
   <body class="{{dash($ns)}}">
   <ui:connectionAlert>
-  <div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <a class="brand" href="/">Project</a>
-        <div class="nav-collapse">
-          <ul class="nav">
-            <!-- Other templates are included like HTML elements -->
-            <app:navLink title="Home" href="/">
-            <app:navLink title="List" href="/list">
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="content">
-    <div class="container">
+  <header>
+    <ul class="nav">
+      <!-- Other templates are included like HTML elements -->
+      <app:navLink title="goodnotes" href="/list">
+    </ul>
+  </header>
 
 <Footer:>
-    </div>
-  </div>
   <footer>
-    <div class="container">
-      <p>&copy; Company 2012</p>
-    </div>
+    <small><p>by <a href="http://culturegraphic.com">culturegraphic</a></p></small>
   </footer>
 
 <navLink:>

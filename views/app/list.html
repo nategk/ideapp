@@ -1,17 +1,17 @@
 <Body:>
-  <div class="row">
 
-    <div class="span3">
+  <article>
+    <section class="new-note">
       <h3>Add note</h3>
       <label>Title</label>
-      <section contenteditable="true">{_page.newNote.title}</section>
+      <h1 contenteditable="true">{_page.newNote.title}</h1>
       <label>Note</label>
-      <textarea>{_page.newNote.description}</textarea>
-      <button type="submit" class="btn" x-bind="click: list.add">Add</button>
-    </div>
+      <section contenteditable="true">{unescaped _page.newNote.description}</section>
+      <button type="submit" x-bind="click: list.add">Add</button>
+    </section>
 
-    <div class="span8 offset1">
-      <table class="table">
+    <section class="notes">
+      <table>
         <thead>
           <tr>
             <th>ID</th>
@@ -25,11 +25,10 @@
               <td><a href="/note/{{:note.id}}">{{:note.id}}</td>
               <td>{{:note.title}}</td>
               <td>{{:note.description}}</td>
-              <td><button class="btn" x-bind="click: list.remove">Remove</button></td>
+              <td><button x-bind="click: list.remove">Remove</button></td>
             </tr>
           {/}
         </tbody>
       </table>
-    </div>
-    
-  </div>
+    </section>
+  </article>

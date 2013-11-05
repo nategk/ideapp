@@ -1,0 +1,64 @@
+@import './normalize';
+@import './grid';
+
+// COLORS
+@grey-lightest: rgb(235,235,235);
+@grey-light: rgb(220,220,220);
+@grey-medium: rgb(180,180,180);
+@grey-dark: rgb(80,80,80);
+@grey-darkest: rgb(20,20,20);
+
+.inline-list {
+  display: inline-block;
+  list-style: none;
+  margin: 1em 1em 1em 0;
+  padding: 0;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: @grey-darkest;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+header, article, footer {
+  .column(10);
+  .prefix(1);
+}
+
+header {
+  margin-bottom: 1em;
+  border-bottom: 1px solid @grey-lightest;
+  ul {
+    .inline-list;
+  }
+}
+
+article {
+  section {
+    min-height: 12em;
+  }
+}
+
+footer {
+  border-top: 1px solid @grey-lightest;
+  margin-top: 1em;
+  ul {
+    .inline-list;
+  }
+}
+
+p, ul {
+  margin: 1em 0;
+}
+
+*[contenteditable="true"] {
+  border: 1px solid @grey-lightest;
+  &:hover {
+    border-color: @grey-light;
+  }
+}
