@@ -1,0 +1,35 @@
+<Body:>
+  <div class="row">
+
+    <div class="span3">
+      <h3>Add note</h3>
+      <label>Title</label>
+      <section contenteditable="true">{_page.newNote.title}</section>
+      <label>Note</label>
+      <textarea>{_page.newNote.description}</textarea>
+      <button type="submit" class="btn" x-bind="click: list.add">Add</button>
+    </div>
+
+    <div class="span8 offset1">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {#each _page.notes as :note}
+            <tr>
+              <td><a href="/note/{{:note.id}}">{{:note.id}}</td>
+              <td>{{:note.title}}</td>
+              <td>{{:note.description}}</td>
+              <td><button class="btn" x-bind="click: list.remove">Remove</button></td>
+            </tr>
+          {/}
+        </tbody>
+      </table>
+    </div>
+    
+  </div>
