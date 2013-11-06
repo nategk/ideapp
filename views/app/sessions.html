@@ -1,0 +1,28 @@
+<Body:>
+
+  <article>
+
+    <h3>Add Session</h3>
+    <label>Title</label>
+    <h1 contenteditable="true">{_page.newSession.title}</h1>
+    <button type="submit" x-bind="click: session.add">Add</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        {#each _page.sessions as :session}
+          <tr>
+            <td><a href="/session/{{:session.id}}">{{:session.id}}</td>
+            <td>{{:session.title}}</td>
+            <td><button x-bind="click: session.remove">Remove</button></td>
+          </tr>
+        {/}
+      </tbody>
+    </table>
+
+  </article>
