@@ -12,7 +12,8 @@
     <table>
       <thead>
         <tr>
-          <th>ID</th>
+<!--           <th>ID</th>
+ -->          <th>Session</th>
           <th>Title</th>
           <th>Description</th>
         </tr>
@@ -20,7 +21,9 @@
       <tbody>
         {#each _page.notes as :note}
           <tr>
-            <td><a href="/note/{{:note.id}}">{{:note.id}}</td>
+<!--             <td><a href="/note/{{:note.id}}">{{:note.id}}</td>
+ -->        
+            <td>{{:note.session}}</td>   
             <td>{{:note.title}}</td>
             <td>{{:note.description}}</td>
             <td><button x-bind="click: list.remove">Remove</button></td>
