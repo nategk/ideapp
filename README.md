@@ -16,7 +16,7 @@ Ultralight-touch ideation app — visit [notes.culturegraphic.com](http://notes
 - Clone this repo ("cd" to any directory to taste)
 
         cd ~/
-        git clone https://github.com/culturegraphic/goodnotes.git
+        git clone https://github.com/culturegraphic/goodidea.git
         cd goodnotes
 
 - Run app from directory
