@@ -1,20 +1,22 @@
+<Title:>
+  {{#if _page.session.title}}
+    {_page.session.title} &middot;&nbsp; 
+  {{/if}}
+  Good Ideas
+
 <Body:>
   <article>
     <h1 contenteditable="true">{_page.session.title}</h1>
-    <ul class="notes">
       <li class="note">
         <section contenteditable="true">{unescaped _page.newNote.text}</section>
         <button type="submit" x-bind="click: note.add">Add</button>
       </li>
-    </ul>
     <hr />
-    <br /><br />
     <ul class="notes">
       {#each _page.notes as :note}
         <app:note text="{{:note.text}}" id="{{:note.id}}" sessionid="{{:note.sessionId}}" userid="{{:note.userId}}" datecreated="{{:note.dateCreated}}">
       {/}
     </ul>
-
   </article>
 
 <note:>
