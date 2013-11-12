@@ -1,12 +1,14 @@
 <Body:>
   <article>
     <h1 contenteditable="true">{_page.session.title}</h1>
-
-    <h3>Add note</h3>
-    <label>Note</label>
-    <section contenteditable="true">{unescaped _page.newNote.text}</section>
-    <button type="submit" x-bind="click: note.add">Add</button>
-
+    <ul class="notes">
+      <li class="note">
+        <section contenteditable="true">{unescaped _page.newNote.text}</section>
+        <button type="submit" x-bind="click: note.add">Add</button>
+      </li>
+    </ul>
+    <hr />
+    <br /><br />
     <ul class="notes">
       {#each _page.notes as :note}
         <app:note text="{{:note.text}}" id="{{:note.id}}" sessionid="{{:note.sessionId}}" userid="{{:note.userId}}" datecreated="{{:note.dateCreated}}">
@@ -16,7 +18,7 @@
   </article>
 
 <note:>
-  <li id="{{@id}}" class="{{@title}}" userid="{{@userid}}" sessionid="{{@sessionid}}" datecreated="{{@datecreated}}">
-    <h3>{{@text}}</h3>
+  <li class="note" id="{{@id}}" userid="{{@userid}}" sessionid="{{@sessionid}}" datecreated="{{@datecreated}}">
+    <section>{{@text}}</section>
     <button x-bind="click: note.remove">Remove</button>
   </li>

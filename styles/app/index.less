@@ -8,6 +8,10 @@
 @grey-dark: rgb(80,80,80);
 @grey-darkest: rgb(20,20,20);
 
+@yellow-lightest: rgb(255,255,240);
+@yellow-light: rgb(245,245,220);
+@yellow-medium: rgb(235,235,210);
+
 .inline-list {
   display: inline-block;
   list-style: none;
@@ -16,6 +20,10 @@
   &:last-child {
     margin-right: 0;
   }
+}
+
+h1 {
+  margin: 1em 0;
 }
 
 body {
@@ -31,8 +39,6 @@ header, article, footer {
 }
 
 header {
-  margin-bottom: 1em;
-  border-bottom: 1px solid @grey-lightest;
   ul {
     .inline-list;
   }
@@ -40,18 +46,70 @@ header {
     text-indent: -1000em;
     width: 6em;
     height: 1.8em;
-    margin-right: 1em;
     display: inline-block;
     background: url("/goodideas.svg");
     background-size: 100% auto;
     background-repeat: none;
+    margin: .5em 1em .5em 0;
   }
 }
 
 article {
   section {
-    min-height: 12em;
+    min-height: 6em;
     font-size: 1.4em;
+  }
+}
+
+hr {
+  border: none;
+  border-top: 1px solid @grey-lightest;
+}
+
+button {
+  border: 1px solid @yellow-medium;
+  background: @yellow-light;
+  color: @grey-dark;
+  &:hover {
+    border-color: @grey-medium;
+    color: @grey-darkest;
+  }
+}
+
+*[contenteditable="true"] {
+  border: 1px solid @grey-lightest;
+  &:hover {
+    border-color: @grey-light;
+  }
+}
+
+ul.notes {
+  list-style: none;
+  padding: 0;
+  .note {
+    border: 1px solid @yellow-light;
+    background: @yellow-lightest;
+    margin: 1em 0;
+    padding: 1em;
+    section {
+      margin: 0;
+      display: inline-block;
+      width: 85%;
+      margin-right: 5%;
+      box-sizing: border-box;
+      size: 2em;
+      font-weight: bold;
+      &[contenteditable="true"] {
+        border: 1px solid @yellow-light;
+        &:hover {
+          border-color: @grey-light;
+        }
+      }
+    }
+    button {
+      width: 10%;
+      display: inline-block;
+    }
   }
 }
 
@@ -70,11 +128,4 @@ footer {
 
 p, ul {
   margin: 1em 0;
-}
-
-*[contenteditable="true"] {
-  border: 1px solid @grey-lightest;
-  &:hover {
-    border-color: @grey-light;
-  }
 }
