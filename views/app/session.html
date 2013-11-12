@@ -7,26 +7,16 @@
     <section contenteditable="true">{unescaped _page.newNote.text}</section>
     <button type="submit" x-bind="click: note.add">Add</button>
 
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Session ID</th>
-          <th>User ID</th>
-          <th>Title</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        {#each _page.notes as :note}
-          <tr>
-            <td><a href="/note/{{:note.id}}">{{:note.id}}</td>
-            <td>{{:note.sessionId}}</td>
-            <td>{{:note.userId}}</td>
-            <td>{{:note.text}}</td>
-            <td><button x-bind="click: note.remove">Remove</button></td>
-          </tr>
-        {/}
-      </tbody>
-    </table>
+    <ul class="notes">
+      {#each _page.notes as :note}
+        <app:note text="{{:note.text}}" id="{{:note.id}}" sessionid="{{:note.sessionId}}" userid="{{:note.userId}}" datecreated="{{:note.dateCreated}}">
+      {/}
+    </ul>
+
   </article>
+
+<note:>
+  <li id="{{@id}}" class="{{@title}}" userid="{{@userid}}" sessionid="{{@sessionid}}" datecreated="{{@datecreated}}">
+    <h3>{{@text}}</h3>
+    <button x-bind="click: note.remove">Remove</button>
+  </li>
