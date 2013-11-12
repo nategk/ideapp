@@ -4,13 +4,14 @@
 
     <h3>Add note</h3>
     <label>Note</label>
-    <section contenteditable="true">{unescaped _page.newNote.description}</section>
+    <section contenteditable="true">{unescaped _page.newNote.text}</section>
     <button type="submit" x-bind="click: note.add">Add</button>
 
     <table>
       <thead>
         <tr>
           <th>ID</th>
+          <th>Session</th>
           <th>Title</th>
           <th>Description</th>
         </tr>
@@ -19,7 +20,8 @@
         {#each _page.notes as :note}
           <tr>
             <td><a href="/note/{{:note.id}}">{{:note.id}}</td>
-            <td>{{:note.description}}</td>
+            <td>{{:note.session}}</td>
+            <td>{{:note.text}}</td>
             <td><button x-bind="click: note.remove">Remove</button></td>
           </tr>
         {/}
