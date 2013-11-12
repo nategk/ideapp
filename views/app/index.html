@@ -1,6 +1,5 @@
-<import: src="./notes">
 <import: src="./note">
-<import: src="./sessions">
+<import: src="./admin">
 <import: src="./session">
 
 <!--
@@ -19,19 +18,22 @@
   Pre-defined templates are automatically included when the page is rendered.
 -->
 
+<Head:>
+  <title>Good Idea</title>
+
 <Header:>
   <body class="{{dash($ns)}}">
   <ui:connectionAlert>
   <header>
     <ul class="nav">
       <!-- Other templates are included like HTML elements -->
-      <app:navLink title="goodnotes" href="/">
+      <app:navLink title="goodidea" href="/">
     </ul>
   </header>
 
 <Footer:>
   <footer>
-    <small><p>by <a href="http://culturegraphic.com">culturegraphic</a></p></small>
+    <small><p>User ID {_session.userId}</p></small>
   </footer>
 
 <navLink:>

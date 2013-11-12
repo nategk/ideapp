@@ -11,7 +11,8 @@
       <thead>
         <tr>
           <th>ID</th>
-          <th>Session</th>
+          <th>Session ID</th>
+          <th>User ID</th>
           <th>Title</th>
           <th>Description</th>
         </tr>
@@ -20,7 +21,8 @@
         {#each _page.notes as :note}
           <tr>
             <td><a href="/note/{{:note.id}}">{{:note.id}}</td>
-            <td>{{:note.session}}</td>
+            <td>{{:note.sessionId}}</td>
+            <td>{{:note.userId}}</td>
             <td>{{:note.text}}</td>
             <td><button x-bind="click: note.remove">Remove</button></td>
           </tr>

@@ -29,29 +29,22 @@
 
     <h2>All Notes</h2>
 
-    <h3>Add note</h3>
-    <label>Title</label>
-    <h1 contenteditable="true">{_page.newNote.title}</h1>
-    <label>Note</label>
-    <section contenteditable="true">{unescaped _page.newNote.description}</section>
-    <button type="submit" x-bind="click: note.add">Add</button>
-
     <table>
       <thead>
         <tr>
           <th>ID</th>
           <th>SessionId</th>
-          <th>Title</th>
-          <th>Description</th>
+          <th>UserId</th>
+          <th>Text</th>
         </tr>
       </thead>
       <tbody>
         {#each _page.notes as :note}
           <tr>
             <td><a href="/note/{{:note.id}}">{{:note.id}}</td>
-            <td>{{:note.sessionId}}</td>   
-            <td>{{:note.title}}</td>
-            <td>{{:note.description}}</td>
+            <td>{{:note.sessionId}}</td>
+            <td>{{:note.userId}}</td>     
+            <td>{{:note.text}}</td>
             <td><button x-bind="click: note.remove">Remove</button></td>
           </tr>
         {/}
