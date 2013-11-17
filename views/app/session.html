@@ -7,20 +7,21 @@
 <Body:>
   <article>
     <h1 contenteditable="true">{_page.session.title}</h1>
-      <li class="note">
-        <section contenteditable="true">{unescaped _page.newNote.text}</section>
-        <button type="submit" x-bind="click: note.add">Add</button>
-      </li>
+    <div class="add note">
+      <section contenteditable="true">{unescaped _page.newNote.text}</section>
+      <button type="submit" x-bind="click: note.add">Add</button>
+    </div>
     <hr />
     <ul class="notes">
       {#each _page.notes as :note}
-        <app:note text="{{:note.text}}" id="{{:note.id}}" sessionid="{{:note.sessionId}}" userid="{{:note.userId}}" datecreated="{{:note.dateCreated}}">
+        <li class="note" id="{{:note.id}}" datecreated="{{:note.dateCreated}}">
+          <section>{{:note.text}}</section>
+          {#each :note.votes as :vote}
+            &bull;
+          {/}
+          <a class="like" x-bind="click: likeUnlike">Like</a>
+          <a class="remove" x-bind="click: note.remove">Remove</a>
+        </li>
       {/}
     </ul>
   </article>
-
-<note:>
-  <li class="note" id="{{@id}}" userid="{{@userid}}" sessionid="{{@sessionid}}" datecreated="{{@datecreated}}">
-    <section>{{@text}}</section>
-    <button x-bind="click: note.remove">Remove</button>
-  </li>

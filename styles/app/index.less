@@ -2,7 +2,8 @@
 @import './grid';
 
 // COLORS
-@grey-lightest: rgb(235,235,235);
+@white: rgb(255,255,255);
+@grey-lightest: rgb(250,250,246);
 @grey-light: rgb(220,220,220);
 @grey-medium: rgb(180,180,180);
 @grey-dark: rgb(80,80,80);
@@ -11,6 +12,7 @@
 @yellow-lightest: rgb(255,255,240);
 @yellow-light: rgb(245,245,220);
 @yellow-medium: rgb(235,235,210);
+@yellow-dark: rgb(215,215,200);
 
 .inline-list {
   display: inline-block;
@@ -22,7 +24,12 @@
   }
 }
 
+.embossed {
+  text-shadow: 0 1px 0 @white;
+}
+
 h1 {
+  .embossed;
   margin: 1em 0;
 }
 
@@ -31,6 +38,7 @@ body {
   color: @grey-darkest;
   max-width: 1140px;
   margin: 0 auto;
+  background: @grey-lightest;
 }
 
 header, article, footer {
@@ -50,13 +58,16 @@ header {
     background: url("/goodideas.svg");
     background-size: 100% auto;
     background-repeat: none;
+  }
+  .logo, .tagline {
+    display: inline-block;
     margin: .5em 1em .5em 0;
   }
 }
 
 article {
   section {
-    min-height: 6em;
+    //min-height: 6em;
     font-size: 1.4em;
   }
 }
@@ -77,7 +88,7 @@ button {
 }
 
 *[contenteditable="true"] {
-  border: 1px solid @grey-lightest;
+  border: 1px solid transparent;
   &:hover {
     border-color: @grey-light;
   }
@@ -86,31 +97,35 @@ button {
 ul.notes {
   list-style: none;
   padding: 0;
-  .note {
-    border: 1px solid @yellow-light;
-    background: @yellow-lightest;
-    margin: 1em 0;
-    padding: 1em;
-    .column(4);
-    section {
-      margin: 0;
-      display: inline-block;
-      width: 85%;
-      margin-right: 5%;
-      box-sizing: border-box;
-      size: 2em;
-      font-weight: bold;
-      &[contenteditable="true"] {
-        border: 1px solid @yellow-light;
-        &:hover {
-          border-color: @grey-light;
-        }
+}
+.note {
+  border: 1px solid @yellow-light;
+  background: @yellow-lightest;
+  margin: 1em 0;
+  padding: 1em;
+  section {
+    margin: 0;
+    display: inline-block;
+    width: 85%;
+    margin-right: 5%;
+    box-sizing: border-box;
+    size: 2em;
+    font-weight: bold;
+    &[contenteditable="true"] {
+      border: 1px solid @yellow-light;
+      &:hover {
+        border-color: @grey-light;
       }
     }
-    button {
-      width: 10%;
-      display: inline-block;
-    }
+  }
+  .like {
+  }
+  .remove {
+    float: right;
+    color: @yellow-dark;
+  }
+  &.add {
+    background: @white;
   }
 }
 
