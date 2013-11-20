@@ -1,6 +1,6 @@
-# goodideas
+# ideapp
 
-Ultralight-touch ideation app — visit [ideas.culturegraphic.com](http://ideas.culturegraphic.com/) and start collaborating on a URL.
+Ultralight-touch ideation app — visit [ideapp.culturegraphic.com](http://ideapp.culturegraphic.com/) and start collaborating on a URL.
 
 
 ## Development setup for OSX
@@ -16,8 +16,8 @@ Ultralight-touch ideation app — visit [ideas.culturegraphic.com](http://ideas
 - Clone this repo ("cd" to any directory to taste)
 
         cd ~/
-        git clone https://github.com/culturegraphic/goodideas.git
-        cd goodideas
+        git clone https://github.com/culturegraphic/ideapp.git
+        cd ideapp
 
 - Run app from directory
 
