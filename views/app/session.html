@@ -2,7 +2,7 @@
   {{#if _page.session.title}}
     {_page.session.title} &middot;&nbsp; 
   {{/if}}
-  Good Ideas
+  ideapp
 
 <Body:>
   <article>
@@ -19,7 +19,12 @@
           {#each :note.likes as :like}
             &bull;
           {/}
-          <a class="like" x-bind="click: likeUnlike">Like</a>
+          {#if :note.liked}
+            <a class="like-unlike" x-bind="click: likeUnlike">Unlike</a>
+          {else}
+            <a class="like-unlike" x-bind="click: likeUnlike">Like</a>
+          {/}
+
           <a class="remove" x-bind="click: note.remove">Remove</a>
         </li>
       {/}
