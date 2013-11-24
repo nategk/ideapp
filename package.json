@@ -1,7 +1,7 @@
 {
   "name": "ideapp",
-  "description": "",
-  "version": "0.0.0",
+  "description": "ultralight-touch ideation app",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": ""
