@@ -7,26 +7,41 @@
 <Body:>
   <article>
     <h1 contenteditable="true">{_page.session.title}</h1>
-    <div class="add-note">
+    <form class="add-note" name="addNote" x-bind="submit: note.add">
       <textarea maxlength="255" placeholder="Idea">{unescaped _page.newNote.text}</textarea>
-      <button type="submit" x-bind="click: note.add">Add</button>
-    </div>
+      <button type="submit">Add</button>
+    </form>
     <hr />
     <ul class="notes">
+
       {#each _page.notes as :note}
+
         <li class="note" id="{{:note.id}}" datecreated="{{:note.dateCreated}}">
           <h2>{{:note.text}}</h2>
-          {#each :note.likes as :like}
-            &bull;
-          {/}
-          {#if :note.liked}
-            <a class="like-unlike" x-bind="click: likeUnlike">Unlike</a>
-          {else}
-            <a class="like-unlike" x-bind="click: likeUnlike">Like</a>
-          {/}
 
-          <a class="remove" x-bind="click: note.remove">Remove</a>
+          <p class="likes">
+            <span class="likeCount">
+              {#if :note.likes}
+                {#each :note.likes as :like}
+                  &bull;&nbsp;
+                {/}
+              {else}
+                No likes
+              {/}
+            </span>
+            <a class="like-unlike" x-bind="click: likeUnlike">
+              {#if isLiked(:note, _page.user)}
+                Unlike
+              {else}
+                Like
+              {/}
+            </a>
+          </p>
+
+          <p><a class="remove" x-bind="click: note.remove">Remove</a></p>
         </li>
+
       {/}
+
     </ul>
   </article>
