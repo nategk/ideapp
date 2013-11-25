@@ -6,19 +6,25 @@
 
 <Body:>
   <article>
-    <h1 contenteditable="true">{_page.session.title}</h1>
-    <form class="add-note" name="addNote" x-bind="submit: note.add">
-      <textarea maxlength="255" placeholder="Idea">{unescaped _page.newNote.text}</textarea>
-      <button type="submit">Add</button>
-    </form>
+
+    <section class="session">
+      <p><label class="embossed">Prompt</label></p>
+      <h1 class="header-above" contenteditable="true">{_page.session.title}</h1>
+    </section>
+
+    <section class="add-note">
+      <form name="addNote" x-bind="submit: note.add">
+        <textarea maxlength="255" placeholder="Idea">{unescaped _page.newNote.text}</textarea>
+        <button type="submit">Add</button>
+      </form>
+    </section>
+
     <hr />
+
     <ul class="notes">
-
       {#each _page.notes as :note}
-
         <li class="note" id="{{:note.id}}" datecreated="{{:note.dateCreated}}">
           <h2>{{:note.text}}</h2>
-
           <p class="likes">
             <span class="likeCount">
               {#if :note.likes}
@@ -37,11 +43,9 @@
               {/}
             </a>
           </p>
-
           <p><a class="remove" x-bind="click: note.remove">Remove</a></p>
         </li>
-
       {/}
-
     </ul>
+
   </article>
