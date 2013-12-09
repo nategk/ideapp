@@ -13,6 +13,11 @@
 @yellow-light: rgb(245,245,220);
 @yellow-medium: rgb(235,235,210);
 @yellow-dark: rgb(215,215,200);
+@yellow-darkest: rgb(180,180,150);
+
+@link-color: yellow-dark;
+@link-hover-color: yellow-darkest;
+
 
 .inline-list {
   display: inline-block;
@@ -64,6 +69,13 @@ body {
   background: @grey-lightest;
 }
 
+a {
+  color: @link-color;
+  &:hover {
+    color: @link-hover-color;
+  }
+}
+
 header, article, footer {
   .column(10);
   .prefix(1);
@@ -93,38 +105,36 @@ header {
 }
 
 a.icon {
-  display: inline;
   position: relative;
   z-index: 1;
   text-decoration: none;
-  color: @grey-medium;
-  font-size: 2em;
+  color: @yellow-lightest;
   font-weight: bold;
-  line-height: normal;
+  // vertical-align: middle;
   display: inline-block;
+  font-size: 1.8em;
   &:before {
     content: '';
     width: 1em;
     height: 1em;
     position: absolute;
-    top: .2em;
+    top: .225em;
     left: -.2em;
     z-index: -1;
-    background: @grey-light;
+    background: @yellow-dark;
     border-radius: 50%;
   }
   &:hover {
-    border-color: @yellow-dark;
-    color: @yellow-dark;
+    color: @yellow-lightest;
     &:before {
-      background: @grey-medium;
+      background: @yellow-darkest;
     }
   } 
 }
 
 hr {
   border: none;
-  border-top: 1px solid @grey-lightest;
+  border-top: 1px solid @grey-light;
 }
 
 button {
