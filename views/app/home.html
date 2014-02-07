@@ -1,0 +1,20 @@
+<Body:>
+  <section class="new-session">
+  	<div class="container">
+  		<form name="newSession" x-bind="submit: session.add">
+	  		<h3>
+	  			<strong>Start an ideation.</strong>
+	  			<br />
+	  			You just need a prompt:
+	  		</h3>
+		    <textarea maxlength="255" placeholder="i.e. How could we reach more users in Africa?">{unescaped _page.newSession.title}</textarea>
+		    <button class="full" type="submit">Start session</button>
+	    </form>
+  	</div>
+  </section>
+  <section class="existing-session">
+  	<div class="container">
+  		<hr />
+  		<p>Want to join an existing session? Ask your friend for the link.</p>
+  	</div>
+  </section>

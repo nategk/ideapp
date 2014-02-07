@@ -1,3 +1,4 @@
+<import: src="./home">
 <import: src="./note">
 <import: src="./admin">
 <import: src="./session">
@@ -25,16 +26,19 @@
   <body class="{{dash($ns)}}">
   <ui:connectionAlert>
   <header>
-    <h1 class="logo">ideapp</h1>
-    <a class="new-session icon" href="/">+</a>
+    <div class="container">
+      <a href="/"><h1 class="logo">ideapp</h1></a>
+      <!--  <a class="new-session icon" href="/">+</a> -->
+    </div>
   </header>
 
 <Footer:>
   <footer>
-    <hr />
-    <small><p>
-      <strong>Build on this</strong> lightning-quick ideation app. Hangout, share the URL and click the title to set your brainstorm prompt. Get creative. “Likes” float to the top. Your name is {_page.user.name}.
-    </p></small>
+    <div class="container">
+      <small><p>
+        Lightning-quick ideation. Like good old-fashioned Post-It brainstorms, but with less paper and more mobility. Start a session, share the URL and start building. “Likes” float to the top. When you’re done, save the cleanup: just export a CSV. Let’s call you {_page.user.name}.
+      </p></small>
+    </div>
   </footer>
 
 <Tail:>
