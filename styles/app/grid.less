@@ -13,6 +13,9 @@
 // Set @total-width to 100% for a fluid layout
 @total-width: 100%;
 
+// Max width
+@max-width: 1140px;
+
 // Uncomment these two lines and the star-hack width/margin lines below to enable sub-pixel fix for IE6 & 7. See http://tylertate.com/blog/2012/01/05/subpixel-rounding.html
 // @min-width: 960;
 // @correction: 0.5 / @min-width * 100 * 1%;
@@ -34,10 +37,15 @@
 // GRID //
 //////////
 
-body {
+html {
   width: 100%;
-  .clearfix;
-  max-width: 1140px;
+  margin: 0;
+}
+
+body {
+//   width: 100%;
+  // .clearfix;
+  // max-width: @max-width;
   margin: 0 auto;
 }
 
